@@ -1,0 +1,54 @@
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.exe.config
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.exe
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.pdb
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csprojAssemblyReference.cache
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmClientes.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmEmpleado.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmFactura.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmFormaPago.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmMenú.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.frmLogueo.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmProveedor.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Properties.Resources.resources
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csproj.GenerateResource.cache
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.exe
+C:\Users\dayan\source\repos\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.pdb
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.exe.config
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.exe
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.pdb
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csprojAssemblyReference.cache
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmClientes.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmEmpleado.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmFactura.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmFormaPago.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmMenú.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.frmLogueo.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.FrmProveedor.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Properties.Resources.resources
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csproj.GenerateResource.cache
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csproj.CoreCompileInputs.cache
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.exe
+C:\Users\BetoCalderon\Downloads\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.pdb
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.exe.config
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.exe
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\ProyectoSICOVE.pdb
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\EntityFramework.dll
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\EntityFramework.xml
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csprojAssemblyReference.cache
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmClientes.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmEmpleado.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmFormaPago.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmProveedor.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Properties.Resources.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csproj.GenerateResource.cache
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csproj.CoreCompileInputs.cache
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.csproj.CopyComplete
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.exe
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.pdb
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmMenu.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.frmLoguin.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmRoles.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmVentas.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmUsuarios.resources
