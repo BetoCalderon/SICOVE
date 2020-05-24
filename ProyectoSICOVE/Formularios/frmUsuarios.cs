@@ -122,6 +122,8 @@ namespace ProyectoSICOVE.Formularios
             txtUsuario.Text = usuario;
             txtClave.Text = clave;
             cmbRol.Text = rol;
+
+            btnGuardar.Enabled = false;
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -147,6 +149,8 @@ namespace ProyectoSICOVE.Formularios
                 cargarGridview();
                 limpiardatos();
                 CargarCombo();
+
+                btnGuardar.Enabled = true;
             }
             catch(Exception ex)
             {

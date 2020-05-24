@@ -20,76 +20,126 @@ namespace ProyectoSICOVE.Formularios
         tb_FormaPago formaPago = new tb_FormaPago();
         private void frmFormaPago_Load(object sender, EventArgs e)
         {
+            groupBox1.Enabled = false;
+            btnGuardar.Enabled = false;
+            btnEminiar.Enabled = false;
+            btnEditar.Enabled = false;
             cargardatos();
             txtFPago.Focus();
         }
         void cargardatos()
         {
-            using (SICOVEEntities db = new SICOVEEntities())
+            try
             {
-                var tb_FormaPago = db.tb_FormaPago;
-                foreach (var iterardatostbUsuario in tb_FormaPago)
+
+                using (SICOVEEntities db = new SICOVEEntities())
                 {
-                    dgvFPagos.Rows.Add(iterardatostbUsuario.IdFormaPago, iterardatostbUsuario.Nombre);
+                    var tb_FormaPago = db.tb_FormaPago;
+                    foreach (var iterardatostbUsuario in tb_FormaPago)
+                    {
+                        dgvFPagos.Rows.Add(
+                            iterardatostbUsuario.IdFormaPago,
+                            iterardatostbUsuario.Nombre);
+                    }
                 }
-                //dgvUsuarios.DataSource = db.tb_usuarios.ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(" Algo salio mal...  ¡Intente de nuevo! ");
             }
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            using (SICOVEEntities db = new SICOVEEntities())
+            try
             {
-                formaPago.Nombre = txtFPago.Text;
+                using (SICOVEEntities db = new SICOVEEntities())
+                {
+                    if(txtFPago.Text == "")
+                    {
+                        MessageBox.Show("Debe dijitar una forma de pago");
+                    }
+                    else
+                    {
+                        formaPago.Nombre = txtFPago.Text;
 
-                db.tb_FormaPago.Add(formaPago);
-                db.SaveChanges();
+                        db.tb_FormaPago.Add(formaPago);
+                        db.SaveChanges();
+                    }
+                }
+                MessageBox.Show("La Forma de Pago se ha registrado con éxito");
+                dgvFPagos.Rows.Clear();
+                cargardatos();
+                txtFPago.Clear();
+                txtFPago.Focus();
             }
-            MessageBox.Show("La Forma de Pago se ha registrado con éxito");
-            dgvFPagos.Rows.Clear();
-            cargardatos();
-            txtFPago.Clear();
-            txtFPago.Focus();
+            catch(Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error: " + ex.Message, "FormaPago");
+               // MessageBox.Show(" Algo salio mal...  ¡Intente de nuevo! ");
+            }
+           
         }
 
         private void dgvFPagos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             String fPagos = dgvFPagos.CurrentRow.Cells[1].Value.ToString();
             txtFPago.Text = fPagos;
-        }
 
+            btnGuardar.Enabled = false;
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            using (SICOVEEntities db = new SICOVEEntities())
+            try
             {
-                string Id = dgvFPagos.CurrentRow.Cells[0].Value.ToString();
-                int IdC = int.Parse(Id);
-                formaPago = db.tb_FormaPago.Where(VerificarId => VerificarId.IdFormaPago == IdC).First();
-                formaPago.Nombre = txtFPago.Text;
-                db.Entry(formaPago).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
+                using (SICOVEEntities db = new SICOVEEntities())
+                {
+                    string Id = dgvFPagos.CurrentRow.Cells[0].Value.ToString();
+                    int IdC = int.Parse(Id);
+                    formaPago = db.tb_FormaPago.Where(VerificarId => VerificarId.IdFormaPago == IdC).First();
+                    formaPago.Nombre = txtFPago.Text;
+                    db.Entry(formaPago).State = System.Data.Entity.EntityState.Modified;
+                    db.SaveChanges();
+                }
+                MessageBox.Show("La Forma de Pago se ha Actualizado con éxito");
+                dgvFPagos.Rows.Clear();
+                cargardatos();
+                txtFPago.Clear();
+                txtFPago.Focus();
+
+                btnGuardar.Enabled = true;
             }
-            MessageBox.Show("La Forma de Pago se ha Actualizado con éxito");
-            dgvFPagos.Rows.Clear();
-            cargardatos();
-            txtFPago.Clear();
-            txtFPago.Focus();
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Algo salio mal...  ¡Intente de nuevo! ");
+            }
+            
         }
 
         private void btnEminiar_Click(object sender, EventArgs e)
         {
-            using (SICOVEEntities db = new SICOVEEntities())
+            try
             {
-                string Id = dgvFPagos.CurrentRow.Cells[0].Value.ToString();
+                using (SICOVEEntities db = new SICOVEEntities())
+                {
+                    string Id = dgvFPagos.CurrentRow.Cells[0].Value.ToString();
 
-                formaPago = db.tb_FormaPago.Find(int.Parse(Id));
-                db.tb_FormaPago.Remove(formaPago);
-                db.SaveChanges();
+                    formaPago = db.tb_FormaPago.Find(int.Parse(Id));
+                    db.tb_FormaPago.Remove(formaPago);
+                    db.SaveChanges();
+                }
+                MessageBox.Show("La Forma de Pago se ha Eliminado con éxito");
+                dgvFPagos.Rows.Clear();
+                cargardatos();
+                txtFPago.Clear();
+                txtFPago.Focus();
+
+                btnGuardar.Enabled = true;
             }
-            MessageBox.Show("La Forma de Pago se ha Eliminado con éxito");
-            dgvFPagos.Rows.Clear();
-            cargardatos();
-            txtFPago.Clear();
-            txtFPago.Focus();
+            catch (Exception ex)
+            {
+                MessageBox.Show(" Algo salio mal...  ¡Intente de nuevo! ");
+            }
+            
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -97,7 +147,26 @@ namespace ProyectoSICOVE.Formularios
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                groupBox1.Enabled = true;
+                btnGuardar.Enabled = true;
+                btnEminiar.Enabled = true;
+                btnEditar.Enabled = true;
+                dgvFPagos.Rows.Clear();
+                cargardatos();
+                txtFPago.Clear();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Algo salio mal... ");
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
             this.Close();
         }
