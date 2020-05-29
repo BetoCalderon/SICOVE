@@ -44,12 +44,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.dtpFechaReg = new System.Windows.Forms.DateTimePicker();
             this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Roles = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -61,7 +68,7 @@
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEditar.Location = new System.Drawing.Point(217, 383);
+            this.btnEditar.Location = new System.Drawing.Point(217, 428);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(93, 40);
             this.btnEditar.TabIndex = 26;
@@ -75,7 +82,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.Location = new System.Drawing.Point(333, 383);
+            this.btnEliminar.Location = new System.Drawing.Point(333, 428);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(95, 40);
             this.btnEliminar.TabIndex = 25;
@@ -89,7 +96,7 @@
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnGuardar.Location = new System.Drawing.Point(116, 383);
+            this.btnGuardar.Location = new System.Drawing.Point(116, 428);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(91, 40);
             this.btnGuardar.TabIndex = 22;
@@ -103,7 +110,7 @@
             this.btnCerrar.FlatAppearance.BorderSize = 0;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCerrar.Location = new System.Drawing.Point(447, 383);
+            this.btnCerrar.Location = new System.Drawing.Point(447, 428);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(101, 40);
             this.btnCerrar.TabIndex = 30;
@@ -117,7 +124,7 @@
             this.btnNuevo.FlatAppearance.BorderSize = 0;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNuevo.Location = new System.Drawing.Point(12, 383);
+            this.btnNuevo.Location = new System.Drawing.Point(12, 428);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(91, 40);
             this.btnNuevo.TabIndex = 34;
@@ -128,6 +135,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.groupBox1.Controls.Add(this.dtpFechaReg);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cmbEmpleado);
+            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.cmbRol);
             this.groupBox1.Controls.Add(this.label3);
@@ -139,7 +150,7 @@
             this.groupBox1.Controls.Add(this.dgvUsuarios);
             this.groupBox1.Location = new System.Drawing.Point(0, -5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(565, 382);
+            this.groupBox1.Size = new System.Drawing.Size(565, 427);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             // 
@@ -159,17 +170,16 @@
             this.cmbRol.FormattingEnabled = true;
             this.cmbRol.Items.AddRange(new object[] {
             "Seleccione"});
-            this.cmbRol.Location = new System.Drawing.Point(97, 140);
+            this.cmbRol.Location = new System.Drawing.Point(12, 157);
             this.cmbRol.Name = "cmbRol";
-            this.cmbRol.Size = new System.Drawing.Size(207, 29);
+            this.cmbRol.Size = new System.Drawing.Size(177, 29);
             this.cmbRol.TabIndex = 41;
-            this.cmbRol.Text = "Seleccione";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Engravers MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(18, 144);
+            this.label3.Location = new System.Drawing.Point(47, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 19);
             this.label3.TabIndex = 40;
@@ -225,7 +235,6 @@
             // 
             this.dgvUsuarios.AllowUserToAddRows = false;
             this.dgvUsuarios.AllowUserToDeleteRows = false;
-            this.dgvUsuarios.AllowUserToOrderColumns = true;
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.BackgroundColor = System.Drawing.Color.LightCyan;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -233,14 +242,62 @@
             this.IdUsuario,
             this.Usuario,
             this.Clave,
+            this.Fecha,
             this.Roles,
-            this.IdRol});
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 203);
+            this.IdRol,
+            this.Empleado,
+            this.IdEmpleado});
+            this.dgvUsuarios.Location = new System.Drawing.Point(6, 255);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.Size = new System.Drawing.Size(536, 166);
+            this.dgvUsuarios.Size = new System.Drawing.Size(553, 166);
             this.dgvUsuarios.TabIndex = 34;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick_1);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Engravers MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(213, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(133, 19);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Empleado";
+            // 
+            // cmbEmpleado
+            // 
+            this.cmbEmpleado.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Italic);
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Items.AddRange(new object[] {
+            "Seleccione"});
+            this.cmbEmpleado.Location = new System.Drawing.Point(208, 157);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(340, 29);
+            this.cmbEmpleado.TabIndex = 44;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Engravers MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 210);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(245, 19);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Fecha de Registro";
+            // 
+            // dtpFechaReg
+            // 
+            this.dtpFechaReg.CalendarFont = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaReg.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarTrailingForeColor = System.Drawing.Color.Silver;
+            this.dtpFechaReg.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaReg.Location = new System.Drawing.Point(263, 210);
+            this.dtpFechaReg.Name = "dtpFechaReg";
+            this.dtpFechaReg.Size = new System.Drawing.Size(285, 22);
+            this.dtpFechaReg.TabIndex = 56;
             // 
             // IdUsuario
             // 
@@ -260,6 +317,13 @@
             this.Clave.HeaderText = "Clave";
             this.Clave.Name = "Clave";
             this.Clave.ReadOnly = true;
+            this.Clave.Visible = false;
+            // 
+            // Fecha
+            // 
+            this.Fecha.HeaderText = "Fehca";
+            this.Fecha.Name = "Fecha";
+            this.Fecha.ReadOnly = true;
             // 
             // Roles
             // 
@@ -274,11 +338,24 @@
             this.IdRol.ReadOnly = true;
             this.IdRol.Visible = false;
             // 
+            // Empleado
+            // 
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
+            // 
+            // IdEmpleado
+            // 
+            this.IdEmpleado.HeaderText = "IdEmpleado";
+            this.IdEmpleado.Name = "IdEmpleado";
+            this.IdEmpleado.ReadOnly = true;
+            this.IdEmpleado.Visible = false;
+            // 
             // frmUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 435);
+            this.ClientSize = new System.Drawing.Size(562, 480);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnCerrar);
@@ -312,11 +389,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.ComboBox cmbEmpleado;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker dtpFechaReg;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn Roles;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
     }
 }

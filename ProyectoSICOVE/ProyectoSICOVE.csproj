@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\frmBusquedas\BuscarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBusquedas\BuscarProducto.Designer.cs">
+      <DependentUpon>BuscarProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmBusquedas\BuscarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmBusquedas\BuscarProveedor.Designer.cs">
+      <DependentUpon>BuscarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,40 +148,58 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SICOVE.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\SICOVE1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICOVE1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SICOVE1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SICOVE1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICOVE1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Model\tb_Clientes.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Compras.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Empleados.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_FormaPago.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Inventarios.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Productos.cs">
       <DependentUpon>SICOVE.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Proveedores.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Roles.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Usuarios.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Ventas.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Formularios\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
@@ -211,6 +241,13 @@
     <None Include="Model\SICOVE.edmx.diagram">
       <DependentUpon>SICOVE.edmx</DependentUpon>
     </None>
+    <EntityDeploy Include="Model\SICOVE1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SICOVE1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\SICOVE1.edmx.diagram">
+      <DependentUpon>SICOVE1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -235,6 +272,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SICOVE.edmx</DependentUpon>
       <LastGenOutput>SICOVE.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SICOVE1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SICOVE1.edmx</DependentUpon>
+      <LastGenOutput>SICOVE1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\SICOVE1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SICOVE1.edmx</DependentUpon>
+      <LastGenOutput>SICOVE1.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

@@ -31,11 +31,13 @@ namespace ProyectoSICOVE.Formularios
         }
         void cargarGridview()
         {
-            using (SICOVEEntities db = new SICOVEEntities())
+            using (SICOVE1Entities db = new SICOVE1Entities())
             {
                 var innerJoin =from tb_Roles in db.tb_Roles
                                from tb_Usuarios in db.tb_Usuarios
-                                where  tb_Roles.IdRole == tb_Usuarios.IdRoles
+                               from tb_Empleados in db.tb_Empleados
+                                where  tb_Roles.IdRol == tb_Usuarios.IdRol
+                                && tb_Empleados.IdEmpleado == tb_Usuarios.IdEmpleado
 
 
                                select new
@@ -44,7 +46,9 @@ namespace ProyectoSICOVE.Formularios
                                     Usuario = tb_Usuarios.Usuario,
                                     Clave = tb_Usuarios.Clave,
                                     Rol = tb_Roles.Nombre,
-                                    IdRol = tb_Roles.IdRole
+                                    IdRol = tb_Roles.IdRol,
+                                    Empleado = tb_Empleados.Nombre,
+                                    IdEmpleado = tb_Empleados.IdEmpleado
 
                                 };
 
@@ -55,7 +59,9 @@ namespace ProyectoSICOVE.Formularios
                         iterardatostbUsuario.Usuario,
                         iterardatostbUsuario.Clave,
                         iterardatostbUsuario.Rol,
-                        iterardatostbUsuario.IdRol);
+                        iterardatostbUsuario.IdRol,
+                        iterardatostbUsuario.Empleado,
+                        iterardatostbUsuario.IdEmpleado);
                 }
             }
         }
@@ -69,15 +75,25 @@ namespace ProyectoSICOVE.Formularios
         }
         void CargarCombo()
         {
-            using (SICOVEEntities db = new SICOVEEntities())
+            using (SICOVE1Entities db = new SICOVE1Entities())
             {
+                //cargando el combo de Rol, con los roles disponibles
                 var Rol = db.tb_Roles.ToList();
 
                 cmbRol.DataSource = Rol;
                 cmbRol.DisplayMember = "Nombre";
-                cmbRol.ValueMember = "IdRole";
+                cmbRol.ValueMember = "IdRol";
                 if (cmbRol.Items.Count > 1)
                     cmbRol.SelectedIndex = -1;
+
+                //cargando el combo de empleado con los empleados 
+                var Empleado = db.tb_Empleados.ToList();
+
+                cmbEmpleado.DataSource = Empleado;
+                cmbEmpleado.DisplayMember = "Nombre";
+                cmbEmpleado.ValueMember = "IdEmpleado";
+                if (cmbEmpleado.Items.Count > 1)
+                    cmbEmpleado.SelectedIndex = -1;
             }
         }
 
@@ -85,13 +101,18 @@ namespace ProyectoSICOVE.Formularios
         {
             try
             {
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     user.Usuario = txtUsuario.Text;
                     user.Clave = txtClave.Text;
 
                     String comboRol = cmbRol.SelectedValue.ToString();
-                    user.IdRoles = Convert.ToInt32(comboRol);
+                    user.IdRol = Convert.ToInt32(comboRol);
+
+                    String comboEmpleado = cmbEmpleado.SelectedValue.ToString();
+                    user.IdRol = Convert.ToInt32(comboEmpleado);
+
+                    user.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
 
                     db.tb_Usuarios.Add(user);
                     db.SaveChanges();
@@ -104,7 +125,7 @@ namespace ProyectoSICOVE.Formularios
             }
             catch(Exception ex)
             {
-                MessageBox.Show("...");
+                MessageBox.Show("..." + ex.ToString());
             }
             
         }
@@ -118,10 +139,14 @@ namespace ProyectoSICOVE.Formularios
         {
             String usuario = dgvUsuarios.CurrentRow.Cells[1].Value.ToString();
             String clave = dgvUsuarios.CurrentRow.Cells[2].Value.ToString();
-            String rol = dgvUsuarios.CurrentRow.Cells[3].Value.ToString();
+            String fecha = dgvUsuarios.CurrentRow.Cells[3].Value.ToString();
+            String rol = dgvUsuarios.CurrentRow.Cells[4].Value.ToString();
+            String empleado = dgvUsuarios.CurrentRow.Cells[5].Value.ToString();
             txtUsuario.Text = usuario;
             txtClave.Text = clave;
+            dtpFechaReg.Text = fecha;
             cmbRol.Text = rol;
+            cmbEmpleado.Text = empleado;
 
             btnGuardar.Enabled = false;
         }
@@ -130,7 +155,7 @@ namespace ProyectoSICOVE.Formularios
             
             try
             {
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     string Id = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
                     int IdC = int.Parse(Id);
@@ -139,7 +164,12 @@ namespace ProyectoSICOVE.Formularios
                     user.Clave = txtClave.Text;
 
                     String comboRol = cmbRol.SelectedValue.ToString();
-                    user.IdRoles = Convert.ToInt32(comboRol);
+                    user.IdRol = Convert.ToInt32(comboRol);
+
+                    String comboEmpleado = cmbEmpleado.SelectedValue.ToString();
+                    user.IdEmpleado = Convert.ToInt32(comboEmpleado);
+
+                    user.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
 
                     db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -151,6 +181,7 @@ namespace ProyectoSICOVE.Formularios
                 CargarCombo();
 
                 btnGuardar.Enabled = true;
+                btnNuevo.Enabled = true;
             }
             catch(Exception ex)
             {
@@ -163,7 +194,7 @@ namespace ProyectoSICOVE.Formularios
         {
             try
             {
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     string Id = dgvUsuarios.CurrentRow.Cells[0].Value.ToString();
 

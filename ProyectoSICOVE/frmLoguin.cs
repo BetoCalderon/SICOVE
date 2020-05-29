@@ -43,7 +43,7 @@ namespace ProyectoSICOVE
                 {
                     frmMenu menu = new frmMenu();
                     menu.Show();
-                    //this.Hide();
+                    this.Hide();
                 }
                 else
                 {

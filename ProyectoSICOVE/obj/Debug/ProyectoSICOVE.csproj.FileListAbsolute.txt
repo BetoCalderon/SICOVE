@@ -52,3 +52,4 @@ C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE
 C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmRoles.resources
 C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmVentas.resources
 C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmUsuarios.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmCompras.resources

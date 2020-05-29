@@ -134,6 +134,7 @@ namespace ProyectoSICOVE.Formularios
                     clientes.Celular = txtCelular.Text;
                     clientes.DUI = txtDUI.Text;
                     clientes.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
+
                     db.Entry(clientes).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
@@ -180,7 +181,7 @@ namespace ProyectoSICOVE.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Algo salio mal... Intente de nuevo");
+                MessageBox.Show("Algo salio mal... Intente de nuevo " + ex.ToString());
             }
         }
 

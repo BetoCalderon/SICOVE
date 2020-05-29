@@ -43,9 +43,7 @@ namespace ProyectoSICOVE.Formularios
 
         private void cerrasSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
-            frmLoguin loguin = new frmLoguin();
-            loguin.Dispose();
+            Application.Exit();
         }
 
         private void registrarRolToolStripMenuItem_Click(object sender, EventArgs e)
@@ -60,6 +58,27 @@ namespace ProyectoSICOVE.Formularios
             frmUsuarios usuarios = new frmUsuarios();
             usuarios.MdiParent = this;
             usuarios.Show();
+        }
+
+        private void cambiarDeUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLoguin loguin = new frmLoguin();
+            loguin.Show();
+            this.Close();
+        }
+
+        private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCompras compras = new frmCompras();
+            compras.MdiParent = this;
+            compras.Show();
+        }
+
+        private void facturasDeVentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmVentas ventas = new frmVentas();
+            ventas.MdiParent = this;
+            ventas.Show();
         }
     }
 }

@@ -31,7 +31,7 @@ namespace ProyectoSICOVE.Formularios
                 foreach (var iterardatostbUsuario in tb_Roles)
                 {
                     dgvRoles.Rows.Add(
-                        iterardatostbUsuario.IdRole, 
+                        iterardatostbUsuario.IdRol, 
                         iterardatostbUsuario.Nombre);
                 }
             }
@@ -64,7 +64,7 @@ namespace ProyectoSICOVE.Formularios
             {
                 string Id = dgvRoles.CurrentRow.Cells[0].Value.ToString();
                 int IdC = int.Parse(Id);
-                roles = db.tb_Roles.Where(VerificarId => VerificarId.IdRole == IdC).First();
+                roles = db.tb_Roles.Where(VerificarId => VerificarId.IdRol == IdC).First();
                 roles.Nombre = txtRol.Text;
                 db.Entry(roles).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();

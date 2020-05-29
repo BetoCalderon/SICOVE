@@ -14,19 +14,14 @@ namespace ProyectoSICOVE.Model
     
     public partial class tb_Usuarios
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_Usuarios()
-        {
-            this.tb_Empleados = new HashSet<tb_Empleados>();
-        }
-    
         public int IdUsuario { get; set; }
         public string Usuario { get; set; }
         public string Clave { get; set; }
-        public Nullable<int> IdRoles { get; set; }
+        public System.DateTime FechaRegistro { get; set; }
+        public Nullable<int> IdRol { get; set; }
+        public Nullable<int> IdEmpleado { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Empleados> tb_Empleados { get; set; }
+        public virtual tb_Empleados tb_Empleados { get; set; }
         public virtual tb_Roles tb_Roles { get; set; }
     }
 }

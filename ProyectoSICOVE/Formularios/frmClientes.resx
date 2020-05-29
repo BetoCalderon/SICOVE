@@ -158,18 +158,6 @@
         MLR8CI3ia9P7DkFwr4qZdwiFzFWrYtZW3Oqwwro1ATzcJCwHua0/RzPNCMMAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAB3RJ
-        TUUH5AQUAhcCg/Ok6AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAADzSURBVEhL
-        zZbLDcIwEERTAad0g8SNEqiAQuBIC5SQQB8UQglBXJc3iS0S4SBb2BFPGkX2rmYc51uZWY2u6IFyIa8L
-        qhUg81K0CvArv6M2k+QlOgV42ioT8hoszf4ngPoK7d3wK/KSoYgKoCbzW99ldnLTs9CTHLBGz75r4OhK
-        Qai/A2Khd4PGz8rsmVBLDxD0R4UwP9miXaLOaMzHdjEXvAa/MDkTxtkDDs67h/GCW5QC/Vs0vl0nK/cw
-        nx5Ab5S5oBa8BmUeNHcUsa+K2ZV76EkLENTLvexSkddguVBA8U+mvv6laBSg3xaldprJhLwaM6tfB7kN
-        6PlyDXYAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnCerrar1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAcVJREFUWEft
@@ -196,24 +184,6 @@
         iEexLzbEqlgQ/HMt5Kot3WJSdNX2Sk2l8gX8ye2jNjLlhgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Nombre.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Dirección.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Celular.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="DUI.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Fecha.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="Id.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

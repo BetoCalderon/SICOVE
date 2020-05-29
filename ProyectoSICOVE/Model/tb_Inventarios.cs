@@ -14,13 +14,23 @@ namespace ProyectoSICOVE.Model
     
     public partial class tb_Inventarios
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_Inventarios()
+        {
+            this.tb_Compras = new HashSet<tb_Compras>();
+            this.tb_Ventas = new HashSet<tb_Ventas>();
+        }
+    
         public int IdInventario { get; set; }
+        public string NomProducto { get; set; }
         public int Existencia { get; set; }
         public string Detalle { get; set; }
-        public decimal Precio { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public Nullable<int> IdProducto { get; set; }
+        public decimal PrecioCompra { get; set; }
+        public System.DateTime FechaRegistro { get; set; }
     
-        public virtual tb_Productos tb_Productos { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Compras> tb_Compras { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Ventas> tb_Ventas { get; set; }
     }
 }

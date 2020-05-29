@@ -23,8 +23,8 @@ namespace ProyectoSICOVE.Model
         public Nullable<decimal> Descuento { get; set; }
         public decimal IVA { get; set; }
         public decimal Total { get; set; }
-        public System.DateTime Fecha { get; set; }
-        public Nullable<int> IdProducto { get; set; }
+        public System.DateTime FechaRegistro { get; set; }
+        public Nullable<int> IdInventario { get; set; }
         public Nullable<int> IdFormaPago { get; set; }
         public Nullable<int> IdCliente { get; set; }
         public Nullable<int> IdEmpleado { get; set; }
@@ -32,6 +32,6 @@ namespace ProyectoSICOVE.Model
         public virtual tb_Clientes tb_Clientes { get; set; }
         public virtual tb_Empleados tb_Empleados { get; set; }
         public virtual tb_FormaPago tb_FormaPago { get; set; }
-        public virtual tb_Productos tb_Productos { get; set; }
+        public virtual tb_Inventarios tb_Inventarios { get; set; }
     }
 }

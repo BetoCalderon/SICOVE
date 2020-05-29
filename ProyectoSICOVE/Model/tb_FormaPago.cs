@@ -23,6 +23,7 @@ namespace ProyectoSICOVE.Model
     
         public int IdFormaPago { get; set; }
         public string Nombre { get; set; }
+        public System.DateTime FechaRegistro { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Compras> tb_Compras { get; set; }
