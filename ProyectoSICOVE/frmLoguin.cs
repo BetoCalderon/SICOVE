@@ -32,7 +32,7 @@ namespace ProyectoSICOVE
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            using (SICOVEEntities db = new SICOVEEntities())
+            using (SICOVE1Entities db = new SICOVE1Entities())
             {
                 var lista = from usuario in db.tb_Usuarios
                             where usuario.Usuario == txtUsuario.Text

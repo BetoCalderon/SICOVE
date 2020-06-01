@@ -25,6 +25,7 @@ namespace ProyectoSICOVE.Formularios
             btnGuardar.Enabled = false;
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+
             cargarGridview();
             limpiardatos();
             CargarCombo();
@@ -45,10 +46,11 @@ namespace ProyectoSICOVE.Formularios
                                     IdUsuario = tb_Usuarios.IdUsuario,
                                     Usuario = tb_Usuarios.Usuario,
                                     Clave = tb_Usuarios.Clave,
+                                    Fecha = tb_Usuarios.FechaRegistro,
                                     Rol = tb_Roles.Nombre,
-                                    IdRol = tb_Roles.IdRol,
                                     Empleado = tb_Empleados.Nombre,
-                                    IdEmpleado = tb_Empleados.IdEmpleado
+                                   IdRol = tb_Roles.IdRol,
+                                   IdEmpleado = tb_Empleados.IdEmpleado
 
                                 };
 
@@ -58,10 +60,12 @@ namespace ProyectoSICOVE.Formularios
                         iterardatostbUsuario.IdUsuario,
                         iterardatostbUsuario.Usuario,
                         iterardatostbUsuario.Clave,
+                        iterardatostbUsuario.Fecha,
                         iterardatostbUsuario.Rol,
-                        iterardatostbUsuario.IdRol,
                         iterardatostbUsuario.Empleado,
-                        iterardatostbUsuario.IdEmpleado);
+                        iterardatostbUsuario.IdRol,
+                        iterardatostbUsuario.IdEmpleado
+                        );
                 }
             }
         }
@@ -85,6 +89,7 @@ namespace ProyectoSICOVE.Formularios
                 cmbRol.ValueMember = "IdRol";
                 if (cmbRol.Items.Count > 1)
                     cmbRol.SelectedIndex = -1;
+                cmbRol.Text = "Seleccione";
 
                 //cargando el combo de empleado con los empleados 
                 var Empleado = db.tb_Empleados.ToList();
@@ -94,6 +99,7 @@ namespace ProyectoSICOVE.Formularios
                 cmbEmpleado.ValueMember = "IdEmpleado";
                 if (cmbEmpleado.Items.Count > 1)
                     cmbEmpleado.SelectedIndex = -1;
+                cmbEmpleado.Text = "Seleccione";
             }
         }
 
@@ -106,13 +112,14 @@ namespace ProyectoSICOVE.Formularios
                     user.Usuario = txtUsuario.Text;
                     user.Clave = txtClave.Text;
 
+                    user.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
+
                     String comboRol = cmbRol.SelectedValue.ToString();
                     user.IdRol = Convert.ToInt32(comboRol);
 
                     String comboEmpleado = cmbEmpleado.SelectedValue.ToString();
-                    user.IdRol = Convert.ToInt32(comboEmpleado);
+                    user.IdEmpleado = Convert.ToInt32(comboEmpleado);
 
-                    user.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
 
                     db.tb_Usuarios.Add(user);
                     db.SaveChanges();
@@ -125,7 +132,7 @@ namespace ProyectoSICOVE.Formularios
             }
             catch(Exception ex)
             {
-                MessageBox.Show("..." + ex.ToString());
+                MessageBox.Show("Algo salio mal " + ex.ToString());
             }
             
         }
@@ -149,6 +156,7 @@ namespace ProyectoSICOVE.Formularios
             cmbEmpleado.Text = empleado;
 
             btnGuardar.Enabled = false;
+            btnNuevo.Enabled = true;
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -185,7 +193,7 @@ namespace ProyectoSICOVE.Formularios
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Algo Salio Mal, intente de nuevo. ");
+                MessageBox.Show("Algo Salio Mal, intente de nuevo. " + ex.ToString());
             }
             
         }
@@ -216,16 +224,25 @@ namespace ProyectoSICOVE.Formularios
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            groupBox1.Enabled = true;
-            btnGuardar.Enabled = true;
-            btnEditar.Enabled = true;
-            btnNuevo.Enabled = false;
-            btnEliminar.Enabled = true;
+            try
+            {
 
-            dgvUsuarios.Rows.Clear();
-            cargarGridview();
-            limpiardatos();
-            CargarCombo();
+                groupBox1.Enabled = true;
+                btnGuardar.Enabled = true;
+                btnEditar.Enabled = true;
+                btnEliminar.Enabled = true;
+
+                btnNuevo.Enabled = false;
+
+                dgvUsuarios.Rows.Clear();
+                cargarGridview();
+                limpiardatos();
+                CargarCombo();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo salio mal, intente de nuevo");
+            }
         }
     }
 }

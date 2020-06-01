@@ -35,6 +35,10 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtpFechaReg = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbRol = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,17 +49,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cmbEmpleado = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dtpFechaReg = new System.Windows.Forms.DateTimePicker();
             this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Clave = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Roles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -154,6 +154,51 @@
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             // 
+            // dtpFechaReg
+            // 
+            this.dtpFechaReg.CalendarFont = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaReg.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
+            this.dtpFechaReg.CalendarTrailingForeColor = System.Drawing.Color.Silver;
+            this.dtpFechaReg.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
+            this.dtpFechaReg.Location = new System.Drawing.Point(263, 210);
+            this.dtpFechaReg.Name = "dtpFechaReg";
+            this.dtpFechaReg.Size = new System.Drawing.Size(285, 22);
+            this.dtpFechaReg.TabIndex = 56;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Engravers MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 210);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(245, 19);
+            this.label6.TabIndex = 45;
+            this.label6.Text = "Fecha de Registro";
+            // 
+            // cmbEmpleado
+            // 
+            this.cmbEmpleado.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Italic);
+            this.cmbEmpleado.FormattingEnabled = true;
+            this.cmbEmpleado.Items.AddRange(new object[] {
+            "Seleccione"});
+            this.cmbEmpleado.Location = new System.Drawing.Point(208, 157);
+            this.cmbEmpleado.Name = "cmbEmpleado";
+            this.cmbEmpleado.Size = new System.Drawing.Size(340, 29);
+            this.cmbEmpleado.TabIndex = 44;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Engravers MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(213, 135);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(133, 19);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Empleado";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -243,9 +288,9 @@
             this.Usuario,
             this.Clave,
             this.Fecha,
-            this.Roles,
-            this.IdRol,
+            this.Rol,
             this.Empleado,
+            this.IdRol,
             this.IdEmpleado});
             this.dgvUsuarios.Location = new System.Drawing.Point(6, 255);
             this.dgvUsuarios.Name = "dgvUsuarios";
@@ -253,51 +298,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(553, 166);
             this.dgvUsuarios.TabIndex = 34;
             this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick_1);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Engravers MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(213, 135);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(133, 19);
-            this.label5.TabIndex = 43;
-            this.label5.Text = "Empleado";
-            // 
-            // cmbEmpleado
-            // 
-            this.cmbEmpleado.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Italic);
-            this.cmbEmpleado.FormattingEnabled = true;
-            this.cmbEmpleado.Items.AddRange(new object[] {
-            "Seleccione"});
-            this.cmbEmpleado.Location = new System.Drawing.Point(208, 157);
-            this.cmbEmpleado.Name = "cmbEmpleado";
-            this.cmbEmpleado.Size = new System.Drawing.Size(340, 29);
-            this.cmbEmpleado.TabIndex = 44;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Engravers MT", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 210);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(245, 19);
-            this.label6.TabIndex = 45;
-            this.label6.Text = "Fecha de Registro";
-            // 
-            // dtpFechaReg
-            // 
-            this.dtpFechaReg.CalendarFont = new System.Drawing.Font("Ebrima", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaReg.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
-            this.dtpFechaReg.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
-            this.dtpFechaReg.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
-            this.dtpFechaReg.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(96)))), ((int)(((byte)(130)))));
-            this.dtpFechaReg.CalendarTrailingForeColor = System.Drawing.Color.Silver;
-            this.dtpFechaReg.Font = new System.Drawing.Font("Sitka Small", 9F, System.Drawing.FontStyle.Bold);
-            this.dtpFechaReg.Location = new System.Drawing.Point(263, 210);
-            this.dtpFechaReg.Name = "dtpFechaReg";
-            this.dtpFechaReg.Size = new System.Drawing.Size(285, 22);
-            this.dtpFechaReg.TabIndex = 56;
             // 
             // IdUsuario
             // 
@@ -325,11 +325,17 @@
             this.Fecha.Name = "Fecha";
             this.Fecha.ReadOnly = true;
             // 
-            // Roles
+            // Rol
             // 
-            this.Roles.HeaderText = "Roles";
-            this.Roles.Name = "Roles";
-            this.Roles.ReadOnly = true;
+            this.Rol.HeaderText = "Rol";
+            this.Rol.Name = "Rol";
+            this.Rol.ReadOnly = true;
+            // 
+            // Empleado
+            // 
+            this.Empleado.HeaderText = "Empleado";
+            this.Empleado.Name = "Empleado";
+            this.Empleado.ReadOnly = true;
             // 
             // IdRol
             // 
@@ -337,12 +343,6 @@
             this.IdRol.Name = "IdRol";
             this.IdRol.ReadOnly = true;
             this.IdRol.Visible = false;
-            // 
-            // Empleado
-            // 
-            this.Empleado.HeaderText = "Empleado";
-            this.Empleado.Name = "Empleado";
-            this.Empleado.ReadOnly = true;
             // 
             // IdEmpleado
             // 
@@ -398,9 +398,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Clave;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Roles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpleado;
     }
 }

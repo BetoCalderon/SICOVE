@@ -38,7 +38,7 @@ namespace ProyectoSICOVE.Formularios
             try
             {
 
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     var tb_Clientes = db.tb_Clientes;
                     foreach (var iterardatostbUsuario in tb_Clientes)
@@ -73,7 +73,7 @@ namespace ProyectoSICOVE.Formularios
             try
             {
 
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     clientes.Nombre = txtNombre.Text;
                     clientes.Direccion = txtDireccion.Text;
@@ -124,7 +124,7 @@ namespace ProyectoSICOVE.Formularios
             try
             {
 
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     string Id = dgvClientes.CurrentRow.Cells[0].Value.ToString();
                     int IdC = int.Parse(Id);
@@ -147,7 +147,7 @@ namespace ProyectoSICOVE.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Algo salio mal... Intente de nuevo");
+                MessageBox.Show("Algo salio mal... Intente de nuevo " + MessageBoxIcon.Exclamation + ex.ToString());
             }
         }
 
@@ -166,7 +166,7 @@ namespace ProyectoSICOVE.Formularios
             try
             {
 
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     string Id = dgvClientes.CurrentRow.Cells[0].Value.ToString();
 

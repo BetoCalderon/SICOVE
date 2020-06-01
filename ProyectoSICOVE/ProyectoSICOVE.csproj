@@ -55,17 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\frmBusquedas\BuscarProducto.cs">
+    <Compile Include="Formularios\frmBusquedas\frmBuscarProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmBusquedas\BuscarProducto.Designer.cs">
-      <DependentUpon>BuscarProducto.cs</DependentUpon>
+    <Compile Include="Formularios\frmBusquedas\frmBuscarProducto.Designer.cs">
+      <DependentUpon>frmBuscarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmBusquedas\BuscarProveedor.cs">
+    <Compile Include="Formularios\frmBusquedas\frmBuscarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\frmBusquedas\BuscarProveedor.Designer.cs">
-      <DependentUpon>BuscarProveedor.cs</DependentUpon>
+    <Compile Include="Formularios\frmBusquedas\frmBuscarProveedor.Designer.cs">
+      <DependentUpon>frmBuscarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmCategorias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCategorias.Designer.cs">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmClientes.cs">
       <SubType>Form</SubType>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="Formularios\frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmRoles.cs">
       <SubType>Form</SubType>
@@ -133,21 +145,6 @@
     <Compile Include="Formularios\frmProveedor.Designer.cs">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\SICOVE.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SICOVE.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\SICOVE.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SICOVE.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\SICOVE.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SICOVE.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Model\SICOVE1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -162,6 +159,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SICOVE1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tb_Categorias.cs">
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Clientes.cs">
       <DependentUpon>SICOVE1.tt</DependentUpon>
@@ -179,7 +179,7 @@
       <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Productos.cs">
-      <DependentUpon>SICOVE.tt</DependentUpon>
+      <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\tb_Proveedores.cs">
       <DependentUpon>SICOVE1.tt</DependentUpon>
@@ -195,6 +195,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\frmBusquedas\frmBuscarProducto.resx">
+      <DependentUpon>frmBuscarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCategorias.resx">
+      <DependentUpon>frmCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmRoles.resx">
       <DependentUpon>frmRoles.cs</DependentUpon>
@@ -234,13 +243,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="Model\SICOVE.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SICOVE.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model\SICOVE.edmx.diagram">
-      <DependentUpon>SICOVE.edmx</DependentUpon>
-    </None>
     <EntityDeploy Include="Model\SICOVE1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SICOVE1.Designer.cs</LastGenOutput>
@@ -263,16 +265,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\SICOVE.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SICOVE.Context.cs</LastGenOutput>
-      <DependentUpon>SICOVE.edmx</DependentUpon>
-    </Content>
-    <Content Include="Model\SICOVE.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SICOVE.edmx</DependentUpon>
-      <LastGenOutput>SICOVE.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\SICOVE1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SICOVE1.edmx</DependentUpon>
@@ -285,7 +280,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

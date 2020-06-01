@@ -35,6 +35,10 @@
             this.btnEminiar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFPago = new System.Windows.Forms.TextBox();
             this.dgvFPagos = new System.Windows.Forms.DataGridView();
@@ -42,14 +46,10 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFPagos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnEditar
@@ -61,7 +61,7 @@
             this.btnEditar.ForeColor = System.Drawing.Color.White;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditar.Location = new System.Drawing.Point(190, 353);
+            this.btnEditar.Location = new System.Drawing.Point(199, 351);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(81, 52);
             this.btnEditar.TabIndex = 37;
@@ -79,7 +79,7 @@
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
             this.btnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.Image")));
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.Location = new System.Drawing.Point(91, 353);
+            this.btnGuardar.Location = new System.Drawing.Point(101, 351);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(93, 52);
             this.btnGuardar.TabIndex = 36;
@@ -97,7 +97,7 @@
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrar.Location = new System.Drawing.Point(372, 353);
+            this.btnCerrar.Location = new System.Drawing.Point(396, 351);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(81, 52);
             this.btnCerrar.TabIndex = 39;
@@ -115,9 +115,9 @@
             this.btnEminiar.ForeColor = System.Drawing.Color.White;
             this.btnEminiar.Image = ((System.Drawing.Image)(resources.GetObject("btnEminiar.Image")));
             this.btnEminiar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEminiar.Location = new System.Drawing.Point(277, 353);
+            this.btnEminiar.Location = new System.Drawing.Point(286, 351);
             this.btnEminiar.Name = "btnEminiar";
-            this.btnEminiar.Size = new System.Drawing.Size(89, 52);
+            this.btnEminiar.Size = new System.Drawing.Size(104, 52);
             this.btnEminiar.TabIndex = 40;
             this.btnEminiar.Text = "Eliminar";
             this.btnEminiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,7 +135,7 @@
             this.btnNuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevo.Location = new System.Drawing.Point(4, 353);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(81, 52);
+            this.btnNuevo.Size = new System.Drawing.Size(91, 52);
             this.btnNuevo.TabIndex = 47;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -157,12 +157,62 @@
             this.groupBox1.TabIndex = 48;
             this.groupBox1.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Location = new System.Drawing.Point(3, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(489, 39);
+            this.panel1.TabIndex = 52;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.btnMinimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(389, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
+            this.btnMinimizar.TabIndex = 12;
+            this.btnMinimizar.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(423, 3);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(30, 30);
+            this.button4.TabIndex = 13;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(498, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 29);
+            this.button1.TabIndex = 2;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Elephant", 17.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(6, 58);
+            this.label2.Location = new System.Drawing.Point(6, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(337, 30);
             this.label2.TabIndex = 51;
@@ -193,7 +243,7 @@
             this.dgvFPagos.Location = new System.Drawing.Point(15, 176);
             this.dgvFPagos.Name = "dgvFPagos";
             this.dgvFPagos.ReadOnly = true;
-            this.dgvFPagos.Size = new System.Drawing.Size(458, 169);
+            this.dgvFPagos.Size = new System.Drawing.Size(473, 169);
             this.dgvFPagos.TabIndex = 49;
             this.dgvFPagos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFPagos_CellClick);
             // 
@@ -231,63 +281,12 @@
             this.pictureBox1.TabIndex = 47;
             this.pictureBox1.TabStop = false;
             // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
-            this.btnMinimizar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(389, 3);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(30, 30);
-            this.btnMinimizar.TabIndex = 12;
-            this.btnMinimizar.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(423, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(30, 30);
-            this.button4.TabIndex = 13;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
-            this.panel1.Controls.Add(this.btnMinimizar);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(489, 39);
-            this.panel1.TabIndex = 52;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(498, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 29);
-            this.button1.TabIndex = 2;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // frmFormaPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(63)))), ((int)(((byte)(105)))));
-            this.ClientSize = new System.Drawing.Size(474, 408);
+            this.ClientSize = new System.Drawing.Size(489, 408);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnEminiar);
@@ -301,9 +300,9 @@
             this.Load += new System.EventHandler(this.frmFormaPago_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFPagos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

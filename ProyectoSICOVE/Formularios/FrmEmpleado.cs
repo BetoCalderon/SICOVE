@@ -44,14 +44,15 @@ namespace ProyectoSICOVE.Formularios
                             iterardatostbUsuario.Nombre,
                             iterardatostbUsuario.Direccion,
                             iterardatostbUsuario.Celular,
-                            iterardatostbUsuario.DUI);
-                            //iterardatostbUsuario.FechaRegistro);
+                            iterardatostbUsuario.DUI,
+                            iterardatostbUsuario.FechaRegistro
+                            );
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Algo salio mal... Intente de nuevo");
+                MessageBox.Show("Algo salio mal... Intente de nuevo " + ex.ToString());
             }
         }
 
@@ -77,7 +78,8 @@ namespace ProyectoSICOVE.Formularios
             btnGuardar.Enabled = true;
             btnEliminar.Enabled = true;
             btnEditar.Enabled = true;
-            btnNuevoUsuario.Enabled = true;
+
+            btnNuevoUsuario.Enabled = false;
 
             limpiartxt();
             cargardatos();
@@ -103,6 +105,7 @@ namespace ProyectoSICOVE.Formularios
                 dgvEmpleados.Rows.Clear();
                 cargardatos();
                 limpiartxt();
+
             }
             catch (Exception ex)
             {
@@ -148,7 +151,7 @@ namespace ProyectoSICOVE.Formularios
                     empleados.Direccion = txtDireccion.Text;
                     empleados.Celular = txtCelular.Text;
                     empleados.DUI = txtDUI.Text;
-                    //empleados.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
+                    empleados.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
                     db.Entry(empleados).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
                 }
@@ -186,7 +189,7 @@ namespace ProyectoSICOVE.Formularios
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Algo salio mal... Intente de nuevo");
+                MessageBox.Show("Algo salio mal... Intente de nuevo " + ex.ToString());
             }
         }
 

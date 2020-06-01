@@ -32,7 +32,7 @@ namespace ProyectoSICOVE.Formularios
             try
             {
 
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     var tb_FormaPago = db.tb_FormaPago;
                     foreach (var iterardatostbUsuario in tb_FormaPago)
@@ -52,7 +52,7 @@ namespace ProyectoSICOVE.Formularios
         {
             try
             {
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     if(txtFPago.Text == "")
                     {
@@ -74,8 +74,8 @@ namespace ProyectoSICOVE.Formularios
             }
             catch(Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show("Error: " + ex.Message, "FormaPago");
-               // MessageBox.Show(" Algo salio mal...  ¡Intente de nuevo! ");
+                //System.Windows.Forms.MessageBox.Show("Error: " + ex.Message, "FormaPago");
+               MessageBox.Show(" Algo salio mal...  ¡Intente de nuevo! ");
             }
            
         }
@@ -91,7 +91,7 @@ namespace ProyectoSICOVE.Formularios
         {
             try
             {
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     string Id = dgvFPagos.CurrentRow.Cells[0].Value.ToString();
                     int IdC = int.Parse(Id);
@@ -119,7 +119,7 @@ namespace ProyectoSICOVE.Formularios
         {
             try
             {
-                using (SICOVEEntities db = new SICOVEEntities())
+                using (SICOVE1Entities db = new SICOVE1Entities())
                 {
                     string Id = dgvFPagos.CurrentRow.Cells[0].Value.ToString();
 
@@ -159,10 +159,12 @@ namespace ProyectoSICOVE.Formularios
                 dgvFPagos.Rows.Clear();
                 cargardatos();
                 txtFPago.Clear();
+
+                btnNuevo.Enabled = false;
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Algo salio mal... ");
+                MessageBox.Show("Algo salio mal... " + ex.ToString());
             }
         }
 

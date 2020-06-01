@@ -25,11 +25,13 @@ namespace ProyectoSICOVE.Model
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<tb_Categorias> tb_Categorias { get; set; }
         public virtual DbSet<tb_Clientes> tb_Clientes { get; set; }
         public virtual DbSet<tb_Compras> tb_Compras { get; set; }
         public virtual DbSet<tb_Empleados> tb_Empleados { get; set; }
         public virtual DbSet<tb_FormaPago> tb_FormaPago { get; set; }
         public virtual DbSet<tb_Inventarios> tb_Inventarios { get; set; }
+        public virtual DbSet<tb_Productos> tb_Productos { get; set; }
         public virtual DbSet<tb_Proveedores> tb_Proveedores { get; set; }
         public virtual DbSet<tb_Roles> tb_Roles { get; set; }
         public virtual DbSet<tb_Usuarios> tb_Usuarios { get; set; }

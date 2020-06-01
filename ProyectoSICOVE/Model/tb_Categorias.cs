@@ -12,27 +12,27 @@ namespace ProyectoSICOVE.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Productos
+    public partial class tb_Categorias
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public tb_Productos()
+        public tb_Categorias()
         {
             this.tb_Compras = new HashSet<tb_Compras>();
             this.tb_Inventarios = new HashSet<tb_Inventarios>();
+            this.tb_Productos = new HashSet<tb_Productos>();
             this.tb_Ventas = new HashSet<tb_Ventas>();
         }
     
-        public int IdProducto { get; set; }
+        public int IdCategoria { get; set; }
         public string Nombre { get; set; }
-        public string Detalle { get; set; }
         public System.DateTime FechaRegistro { get; set; }
-        public Nullable<int> IdCategoria { get; set; }
     
-        public virtual tb_Categorias tb_Categorias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Compras> tb_Compras { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Inventarios> tb_Inventarios { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Productos> tb_Productos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Ventas> tb_Ventas { get; set; }
     }

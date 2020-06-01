@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoSICOVE.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -67,9 +68,11 @@ namespace ProyectoSICOVE.Formularios
             this.Close();
         }
 
+        //clase publica que permite el acceso global de las propiedades de compras
+        public static frmCompras compras = new frmCompras();
         private void facturaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmCompras compras = new frmCompras();
+            //frmCompras compras = new frmCompras();
             compras.MdiParent = this;
             compras.Show();
         }
@@ -79,6 +82,20 @@ namespace ProyectoSICOVE.Formularios
             frmVentas ventas = new frmVentas();
             ventas.MdiParent = this;
             ventas.Show();
+        }
+
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCategorias categorias = new frmCategorias();
+            categorias.Show();
+            categorias.MdiParent = this;
+        }
+
+        private void productosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProductos productos = new frmProductos();
+            productos.MdiParent = this;
+            productos.Show();
         }
     }
 }

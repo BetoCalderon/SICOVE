@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="SICOVE1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tb_Categorias">
+    <Key>
+      <PropertyRef Name="IdCategoria" />
+    </Key>
+    <Property Name="IdCategoria" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaRegistro" Type="date" Nullable="false" />
+  </EntityType>
   <EntityType Name="tb_Clientes">
     <Key>
       <PropertyRef Name="IdCliente" />
@@ -17,14 +25,16 @@
     </Key>
     <Property Name="IdCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NumFac" Type="int" Nullable="false" />
-    <Property Name="Detalle" Type="varchar" MaxLength="100" />
+    <Property Name="DetalleCompra" Type="varchar" MaxLength="100" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="PrecioCompra" Type="money" Nullable="false" />
     <Property Name="SubTotal" Type="money" Nullable="false" />
     <Property Name="Descuento" Type="money" />
-    <Property Name="IVA" Type="money" Nullable="false" />
-    <Property Name="Total" Type="money" Nullable="false" />
+    <Property Name="IVA" Type="money" />
+    <Property Name="TotalCompra" Type="money" Nullable="false" />
     <Property Name="FechaRegistro" Type="date" Nullable="false" />
-    <Property Name="IdInventario" Type="int" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
     <Property Name="IdProveedor" Type="int" />
     <Property Name="IdFormaPago" Type="int" />
     <Property Name="IdEmpleado" Type="int" />
@@ -53,11 +63,20 @@
       <PropertyRef Name="IdInventario" />
     </Key>
     <Property Name="IdInventario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="NomProducto" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
     <Property Name="Existencia" Type="int" Nullable="false" />
-    <Property Name="Detalle" Type="varchar" MaxLength="100" />
-    <Property Name="PrecioCompra" Type="money" Nullable="false" />
     <Property Name="FechaRegistro" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_Productos">
+    <Key>
+      <PropertyRef Name="IdProducto" />
+    </Key>
+    <Property Name="IdProducto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Detalle" Type="varchar" MaxLength="50" />
+    <Property Name="FechaRegistro" Type="date" Nullable="false" />
+    <Property Name="IdCategoria" Type="int" />
   </EntityType>
   <EntityType Name="tb_Proveedores">
     <Key>
@@ -96,19 +115,33 @@
     <Property Name="IdVenta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="NumFac" Type="int" Nullable="false" />
     <Property Name="Detalle" Type="varchar" MaxLength="100" />
+    <Property Name="PrecioCompra" Type="money" />
     <Property Name="Cantidad" Type="int" Nullable="false" />
     <Property Name="Precio" Type="money" Nullable="false" />
     <Property Name="SubTotal" Type="money" Nullable="false" />
     <Property Name="Descuento" Type="money" />
-    <Property Name="IVA" Type="money" Nullable="false" />
+    <Property Name="IVA" Type="money" />
     <Property Name="Total" Type="money" Nullable="false" />
     <Property Name="FechaRegistro" Type="date" Nullable="false" />
-    <Property Name="IdInventario" Type="int" />
+    <Property Name="IdProducto" Type="int" />
+    <Property Name="IdCategoria" Type="int" />
     <Property Name="IdFormaPago" Type="int" />
     <Property Name="IdCliente" Type="int" />
     <Property Name="IdEmpleado" Type="int" />
   </EntityType>
-  <Association Name="FK__tb_Compra__IdEmp__36B12243">
+  <Association Name="FK__tb_Compra__IdCat__3B75D760">
+    <End Role="tb_Categorias" Type="Self.tb_Categorias" Multiplicity="0..1" />
+    <End Role="tb_Compras" Type="Self.tb_Compras" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tb_Compras">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Compra__IdEmp__3E52440B">
     <End Role="tb_Empleados" Type="Self.tb_Empleados" Multiplicity="0..1" />
     <End Role="tb_Compras" Type="Self.tb_Compras" Multiplicity="*" />
     <ReferentialConstraint>
@@ -120,7 +153,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Compra__IdFor__35BCFE0A">
+  <Association Name="FK__tb_Compra__IdFor__3D5E1FD2">
     <End Role="tb_FormaPago" Type="Self.tb_FormaPago" Multiplicity="0..1" />
     <End Role="tb_Compras" Type="Self.tb_Compras" Multiplicity="*" />
     <ReferentialConstraint>
@@ -132,19 +165,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Compra__IdInv__33D4B598">
-    <End Role="tb_Inventarios" Type="Self.tb_Inventarios" Multiplicity="0..1" />
+  <Association Name="FK__tb_Compra__IdPro__3A81B327">
+    <End Role="tb_Productos" Type="Self.tb_Productos" Multiplicity="0..1" />
     <End Role="tb_Compras" Type="Self.tb_Compras" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tb_Inventarios">
-        <PropertyRef Name="IdInventario" />
+      <Principal Role="tb_Productos">
+        <PropertyRef Name="IdProducto" />
       </Principal>
       <Dependent Role="tb_Compras">
-        <PropertyRef Name="IdInventario" />
+        <PropertyRef Name="IdProducto" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Compra__IdPro__34C8D9D1">
+  <Association Name="FK__tb_Compra__IdPro__3C69FB99">
     <End Role="tb_Proveedores" Type="Self.tb_Proveedores" Multiplicity="0..1" />
     <End Role="tb_Compras" Type="Self.tb_Compras" Multiplicity="*" />
     <ReferentialConstraint>
@@ -153,6 +186,42 @@
       </Principal>
       <Dependent Role="tb_Compras">
         <PropertyRef Name="IdProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Invent__IdCat__37A5467C">
+    <End Role="tb_Categorias" Type="Self.tb_Categorias" Multiplicity="0..1" />
+    <End Role="tb_Inventarios" Type="Self.tb_Inventarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tb_Inventarios">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Invent__IdPro__36B12243">
+    <End Role="tb_Productos" Type="Self.tb_Productos" Multiplicity="0..1" />
+    <End Role="tb_Inventarios" Type="Self.tb_Inventarios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Productos">
+        <PropertyRef Name="IdProducto" />
+      </Principal>
+      <Dependent Role="tb_Inventarios">
+        <PropertyRef Name="IdProducto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Produc__IdCat__33D4B598">
+    <End Role="tb_Categorias" Type="Self.tb_Categorias" Multiplicity="0..1" />
+    <End Role="tb_Productos" Type="Self.tb_Productos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tb_Productos">
+        <PropertyRef Name="IdCategoria" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -180,7 +249,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Ventas__IdCli__3B75D760">
+  <Association Name="FK__tb_Ventas__IdCat__4222D4EF">
+    <End Role="tb_Categorias" Type="Self.tb_Categorias" Multiplicity="0..1" />
+    <End Role="tb_Ventas" Type="Self.tb_Ventas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Categorias">
+        <PropertyRef Name="IdCategoria" />
+      </Principal>
+      <Dependent Role="tb_Ventas">
+        <PropertyRef Name="IdCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_Ventas__IdCli__440B1D61">
     <End Role="tb_Clientes" Type="Self.tb_Clientes" Multiplicity="0..1" />
     <End Role="tb_Ventas" Type="Self.tb_Ventas" Multiplicity="*" />
     <ReferentialConstraint>
@@ -192,7 +273,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Ventas__IdEmp__3C69FB99">
+  <Association Name="FK__tb_Ventas__IdEmp__44FF419A">
     <End Role="tb_Empleados" Type="Self.tb_Empleados" Multiplicity="0..1" />
     <End Role="tb_Ventas" Type="Self.tb_Ventas" Multiplicity="*" />
     <ReferentialConstraint>
@@ -204,7 +285,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Ventas__IdFor__3A81B327">
+  <Association Name="FK__tb_Ventas__IdFor__4316F928">
     <End Role="tb_FormaPago" Type="Self.tb_FormaPago" Multiplicity="0..1" />
     <End Role="tb_Ventas" Type="Self.tb_Ventas" Multiplicity="*" />
     <ReferentialConstraint>
@@ -216,43 +297,61 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Ventas__IdInv__398D8EEE">
-    <End Role="tb_Inventarios" Type="Self.tb_Inventarios" Multiplicity="0..1" />
+  <Association Name="FK__tb_Ventas__IdPro__412EB0B6">
+    <End Role="tb_Productos" Type="Self.tb_Productos" Multiplicity="0..1" />
     <End Role="tb_Ventas" Type="Self.tb_Ventas" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="tb_Inventarios">
-        <PropertyRef Name="IdInventario" />
+      <Principal Role="tb_Productos">
+        <PropertyRef Name="IdProducto" />
       </Principal>
       <Dependent Role="tb_Ventas">
-        <PropertyRef Name="IdInventario" />
+        <PropertyRef Name="IdProducto" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="SICOVE1ModelStoreContainer">
+    <EntitySet Name="tb_Categorias" EntityType="Self.tb_Categorias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Clientes" EntityType="Self.tb_Clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Compras" EntityType="Self.tb_Compras" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Empleados" EntityType="Self.tb_Empleados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_FormaPago" EntityType="Self.tb_FormaPago" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Inventarios" EntityType="Self.tb_Inventarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Productos" EntityType="Self.tb_Productos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Proveedores" EntityType="Self.tb_Proveedores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Roles" EntityType="Self.tb_Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Usuarios" EntityType="Self.tb_Usuarios" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Ventas" EntityType="Self.tb_Ventas" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__tb_Compra__IdEmp__36B12243" Association="Self.FK__tb_Compra__IdEmp__36B12243">
+    <AssociationSet Name="FK__tb_Compra__IdCat__3B75D760" Association="Self.FK__tb_Compra__IdCat__3B75D760">
+      <End Role="tb_Categorias" EntitySet="tb_Categorias" />
+      <End Role="tb_Compras" EntitySet="tb_Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Compra__IdEmp__3E52440B" Association="Self.FK__tb_Compra__IdEmp__3E52440B">
       <End Role="tb_Empleados" EntitySet="tb_Empleados" />
       <End Role="tb_Compras" EntitySet="tb_Compras" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Compra__IdFor__35BCFE0A" Association="Self.FK__tb_Compra__IdFor__35BCFE0A">
+    <AssociationSet Name="FK__tb_Compra__IdFor__3D5E1FD2" Association="Self.FK__tb_Compra__IdFor__3D5E1FD2">
       <End Role="tb_FormaPago" EntitySet="tb_FormaPago" />
       <End Role="tb_Compras" EntitySet="tb_Compras" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Compra__IdInv__33D4B598" Association="Self.FK__tb_Compra__IdInv__33D4B598">
-      <End Role="tb_Inventarios" EntitySet="tb_Inventarios" />
+    <AssociationSet Name="FK__tb_Compra__IdPro__3A81B327" Association="Self.FK__tb_Compra__IdPro__3A81B327">
+      <End Role="tb_Productos" EntitySet="tb_Productos" />
       <End Role="tb_Compras" EntitySet="tb_Compras" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Compra__IdPro__34C8D9D1" Association="Self.FK__tb_Compra__IdPro__34C8D9D1">
+    <AssociationSet Name="FK__tb_Compra__IdPro__3C69FB99" Association="Self.FK__tb_Compra__IdPro__3C69FB99">
       <End Role="tb_Proveedores" EntitySet="tb_Proveedores" />
       <End Role="tb_Compras" EntitySet="tb_Compras" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Invent__IdCat__37A5467C" Association="Self.FK__tb_Invent__IdCat__37A5467C">
+      <End Role="tb_Categorias" EntitySet="tb_Categorias" />
+      <End Role="tb_Inventarios" EntitySet="tb_Inventarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Invent__IdPro__36B12243" Association="Self.FK__tb_Invent__IdPro__36B12243">
+      <End Role="tb_Productos" EntitySet="tb_Productos" />
+      <End Role="tb_Inventarios" EntitySet="tb_Inventarios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Produc__IdCat__33D4B598" Association="Self.FK__tb_Produc__IdCat__33D4B598">
+      <End Role="tb_Categorias" EntitySet="tb_Categorias" />
+      <End Role="tb_Productos" EntitySet="tb_Productos" />
     </AssociationSet>
     <AssociationSet Name="FK__tb_Usuari__IdEmp__2D27B809" Association="Self.FK__tb_Usuari__IdEmp__2D27B809">
       <End Role="tb_Empleados" EntitySet="tb_Empleados" />
@@ -262,20 +361,24 @@
       <End Role="tb_Roles" EntitySet="tb_Roles" />
       <End Role="tb_Usuarios" EntitySet="tb_Usuarios" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Ventas__IdCli__3B75D760" Association="Self.FK__tb_Ventas__IdCli__3B75D760">
+    <AssociationSet Name="FK__tb_Ventas__IdCat__4222D4EF" Association="Self.FK__tb_Ventas__IdCat__4222D4EF">
+      <End Role="tb_Categorias" EntitySet="tb_Categorias" />
+      <End Role="tb_Ventas" EntitySet="tb_Ventas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_Ventas__IdCli__440B1D61" Association="Self.FK__tb_Ventas__IdCli__440B1D61">
       <End Role="tb_Clientes" EntitySet="tb_Clientes" />
       <End Role="tb_Ventas" EntitySet="tb_Ventas" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Ventas__IdEmp__3C69FB99" Association="Self.FK__tb_Ventas__IdEmp__3C69FB99">
+    <AssociationSet Name="FK__tb_Ventas__IdEmp__44FF419A" Association="Self.FK__tb_Ventas__IdEmp__44FF419A">
       <End Role="tb_Empleados" EntitySet="tb_Empleados" />
       <End Role="tb_Ventas" EntitySet="tb_Ventas" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Ventas__IdFor__3A81B327" Association="Self.FK__tb_Ventas__IdFor__3A81B327">
+    <AssociationSet Name="FK__tb_Ventas__IdFor__4316F928" Association="Self.FK__tb_Ventas__IdFor__4316F928">
       <End Role="tb_FormaPago" EntitySet="tb_FormaPago" />
       <End Role="tb_Ventas" EntitySet="tb_Ventas" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Ventas__IdInv__398D8EEE" Association="Self.FK__tb_Ventas__IdInv__398D8EEE">
-      <End Role="tb_Inventarios" EntitySet="tb_Inventarios" />
+    <AssociationSet Name="FK__tb_Ventas__IdPro__412EB0B6" Association="Self.FK__tb_Ventas__IdPro__412EB0B6">
+      <End Role="tb_Productos" EntitySet="tb_Productos" />
       <End Role="tb_Ventas" EntitySet="tb_Ventas" />
     </AssociationSet>
   </EntityContainer>

@@ -16,21 +16,24 @@ namespace ProyectoSICOVE.Model
     {
         public int IdCompra { get; set; }
         public int NumFac { get; set; }
-        public string Detalle { get; set; }
+        public string DetalleCompra { get; set; }
         public int Cantidad { get; set; }
+        public decimal PrecioCompra { get; set; }
         public decimal SubTotal { get; set; }
         public Nullable<decimal> Descuento { get; set; }
-        public decimal IVA { get; set; }
-        public decimal Total { get; set; }
+        public Nullable<decimal> IVA { get; set; }
+        public decimal TotalCompra { get; set; }
         public System.DateTime FechaRegistro { get; set; }
-        public Nullable<int> IdInventario { get; set; }
+        public Nullable<int> IdProducto { get; set; }
+        public Nullable<int> IdCategoria { get; set; }
         public Nullable<int> IdProveedor { get; set; }
         public Nullable<int> IdFormaPago { get; set; }
         public Nullable<int> IdEmpleado { get; set; }
     
+        public virtual tb_Categorias tb_Categorias { get; set; }
         public virtual tb_Empleados tb_Empleados { get; set; }
         public virtual tb_FormaPago tb_FormaPago { get; set; }
-        public virtual tb_Inventarios tb_Inventarios { get; set; }
+        public virtual tb_Productos tb_Productos { get; set; }
         public virtual tb_Proveedores tb_Proveedores { get; set; }
     }
 }
