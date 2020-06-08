@@ -56,3 +56,4 @@ C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE
 C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmProductos.resources
 C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmCategorias.resources
 C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmBusquedas.frmBuscarProducto.resources
+C:\Users\BetoCalderon\Documents\Visual Studio 2019\ProyectoSICOVE\ProyectoSICOVE\obj\Debug\ProyectoSICOVE.Formularios.frmMuestraExistencias.resources

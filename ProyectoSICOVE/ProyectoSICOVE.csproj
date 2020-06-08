@@ -61,12 +61,6 @@
     <Compile Include="Formularios\frmBusquedas\frmBuscarProducto.Designer.cs">
       <DependentUpon>frmBuscarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\frmBusquedas\frmBuscarProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formularios\frmBusquedas\frmBuscarProveedor.Designer.cs">
-      <DependentUpon>frmBuscarProveedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formularios\frmCategorias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +90,12 @@
     </Compile>
     <Compile Include="Formularios\frmEmpleados.Designer.cs">
       <DependentUpon>frmEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmMuestraExistencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmMuestraExistencias.Designer.cs">
+      <DependentUpon>frmMuestraExistencias.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmProductos.cs">
       <SubType>Form</SubType>
@@ -209,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmEmpleado.resx">
       <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmMuestraExistencias.resx">
+      <DependentUpon>frmMuestraExistencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>

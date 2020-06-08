@@ -34,16 +34,17 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
             {
                 string nombre = txtBuscarProducto.Text;
 
-                var buscarprod = from tb_producto in db.tb_Productos
-                                 from tb_Categorias in db.tb_Categorias
-                                 where tb_producto.Nombre.Contains(nombre)
-                                 where tb_Categorias.Nombre.Contains(nombre)
+                var buscarprod = from tb_Categorias in db.tb_Categorias
+                                 from tb_productos in db.tb_Productos
+                                 where tb_productos.IdProducto == tb_Categorias.IdCategoria 
+                                 where tb_productos.Nombre.Contains(nombre)
+                                 //where tb_Categorias.Nombre.Contains(nombre)
 
 
                                  select new
                                  {
-                                     id = tb_producto.IdProducto,
-                                     Nombre = tb_producto.Nombre,
+                                     Codigo = tb_productos.IdProducto,
+                                     Nombre = tb_productos.Nombre,
                                      Categoria = tb_Categorias.Nombre
                                  };
 
@@ -62,18 +63,18 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
             string Nombre = dgvBuscarProd.CurrentRow.Cells[1].Value.ToString();
             string Categoria = dgvBuscarProd.CurrentRow.Cells[2].Value.ToString();
 
-            frmMenu.compras.txtCdProducto.Text = id;
+            frmMenu.compras.txtCodProducto.Text = id;
             frmMenu.compras.txtNombreProducto.Text = Nombre;
             frmMenu.compras.txtCategoriaProd.Text = Categoria;
 
-            frmMenu.compras.txtPrecio.Focus();
-
+            frmMenu.compras.txtPrecio.Select();
         }
 
         private void dgvBuscarProd_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
             envio();
+            //frmMenu.compras.txtPrecio.Focus();
             this.Hide();
         }
 
@@ -82,6 +83,7 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
             if (e.KeyCode == Keys.Enter)
             {
                 envio();
+                //frmMenu.compras.txtPrecio.Focus();
                 this.Hide();
             }
         }

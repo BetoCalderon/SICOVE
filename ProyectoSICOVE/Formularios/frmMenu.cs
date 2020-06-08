@@ -97,5 +97,12 @@ namespace ProyectoSICOVE.Formularios
             productos.MdiParent = this;
             productos.Show();
         }
+
+        private void cdsvdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMuestraExistencias existencias = new frmMuestraExistencias();
+            existencias.MdiParent = this;
+            existencias.Show();
+        }
     }
 }
