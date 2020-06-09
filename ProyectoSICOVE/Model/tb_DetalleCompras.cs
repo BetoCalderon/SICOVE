@@ -12,12 +12,20 @@ namespace ProyectoSICOVE.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class tb_Inventarios
+    public partial class tb_DetalleCompras
     {
-        public int IdInventario { get; set; }
+        public int IdDetalleCompra { get; set; }
+        public Nullable<int> IdCompra { get; set; }
         public Nullable<int> IdProducto { get; set; }
-        public int Existencia { get; set; }
+        public Nullable<int> IdCategoria { get; set; }
+        public decimal PrecioCompra { get; set; }
+        public int Cantidad { get; set; }
+        public Nullable<decimal> SubTotal { get; set; }
+        public Nullable<decimal> IVA { get; set; }
+        public decimal Total { get; set; }
     
+        public virtual tb_Categorias tb_Categorias { get; set; }
+        public virtual tb_Compras tb_Compras { get; set; }
         public virtual tb_Productos tb_Productos { get; set; }
     }
 }

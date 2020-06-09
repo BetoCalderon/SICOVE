@@ -35,8 +35,9 @@
             this.dgvBuscarProd = new System.Windows.Forms.DataGridView();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCerrar1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnCerrar1 = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscarProd)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             this.txtBuscarProducto.Location = new System.Drawing.Point(101, 98);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
-            this.txtBuscarProducto.Size = new System.Drawing.Size(313, 20);
+            this.txtBuscarProducto.Size = new System.Drawing.Size(232, 20);
             this.txtBuscarProducto.TabIndex = 10;
             this.txtBuscarProducto.TextChanged += new System.EventHandler(this.txtBuscarProducto_TextChanged);
             // 
@@ -105,6 +106,16 @@
             this.panel1.Size = new System.Drawing.Size(428, 42);
             this.panel1.TabIndex = 46;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
+            this.panel2.Controls.Add(this.btnCerrar1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(428, 42);
+            this.panel2.TabIndex = 46;
+            // 
             // btnCerrar1
             // 
             this.btnCerrar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
@@ -119,21 +130,22 @@
             this.btnCerrar1.UseVisualStyleBackColor = false;
             this.btnCerrar1.Click += new System.EventHandler(this.btnCerrar1_Click);
             // 
-            // panel2
+            // btnNuevo
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(43)))), ((int)(((byte)(73)))));
-            this.panel2.Controls.Add(this.btnCerrar1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(428, 42);
-            this.panel2.TabIndex = 46;
+            this.btnNuevo.Location = new System.Drawing.Point(339, 95);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
+            this.btnNuevo.TabIndex = 47;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // frmBuscarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 288);
+            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dgvBuscarProd);
             this.Controls.Add(this.label1);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCerrar1;
+        private System.Windows.Forms.Button btnNuevo;
     }
 }

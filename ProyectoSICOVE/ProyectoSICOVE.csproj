@@ -169,6 +169,12 @@
     <Compile Include="Model\tb_Compras.cs">
       <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\tb_DetalleCompras.cs">
+      <DependentUpon>SICOVE1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\tb_DetalleVentas.cs">
+      <DependentUpon>SICOVE1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\tb_Empleados.cs">
       <DependentUpon>SICOVE1.tt</DependentUpon>
     </Compile>

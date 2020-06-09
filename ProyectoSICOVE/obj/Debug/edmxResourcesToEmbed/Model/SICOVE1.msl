@@ -22,27 +22,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="tb_Compras">
-      <EntityTypeMapping TypeName="SICOVE1Model.tb_Compras">
-        <MappingFragment StoreEntitySet="tb_Compras">
-          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
-          <ScalarProperty Name="NumFac" ColumnName="NumFac" />
-          <ScalarProperty Name="DetalleCompra" ColumnName="DetalleCompra" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="PrecioCompra" ColumnName="PrecioCompra" />
-          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
-          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
-          <ScalarProperty Name="IVA" ColumnName="IVA" />
-          <ScalarProperty Name="TotalCompra" ColumnName="TotalCompra" />
-          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
-          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
-          <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
-          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="tb_Empleados">
       <EntityTypeMapping TypeName="SICOVE1Model.tb_Empleados">
         <MappingFragment StoreEntitySet="tb_Empleados">
@@ -69,9 +48,7 @@
         <MappingFragment StoreEntitySet="tb_Inventarios">
           <ScalarProperty Name="IdInventario" ColumnName="IdInventario" />
           <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
           <ScalarProperty Name="Existencia" ColumnName="Existencia" />
-          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -119,25 +96,63 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="tb_Compras">
+      <EntityTypeMapping TypeName="SICOVE1Model.tb_Compras">
+        <MappingFragment StoreEntitySet="tb_Compras">
+          <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
+          <ScalarProperty Name="TotalCompra" ColumnName="TotalCompra" />
+          <ScalarProperty Name="DetalleCompra" ColumnName="DetalleCompra" />
+          <ScalarProperty Name="NumFac" ColumnName="NumFac" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_DetalleCompras">
+      <EntityTypeMapping TypeName="SICOVE1Model.tb_DetalleCompras">
+        <MappingFragment StoreEntitySet="tb_DetalleCompras">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioCompra" ColumnName="PrecioCompra" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="IdCompra" ColumnName="IdCompra" />
+          <ScalarProperty Name="IdDetalleCompra" ColumnName="IdDetalleCompra" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_DetalleVentas">
+      <EntityTypeMapping TypeName="SICOVE1Model.tb_DetalleVentas">
+        <MappingFragment StoreEntitySet="tb_DetalleVentas">
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="IVA" ColumnName="IVA" />
+          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
+          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+          <ScalarProperty Name="IdDetalleVenta" ColumnName="IdDetalleVenta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="tb_Ventas">
       <EntityTypeMapping TypeName="SICOVE1Model.tb_Ventas">
         <MappingFragment StoreEntitySet="tb_Ventas">
-          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
-          <ScalarProperty Name="NumFac" ColumnName="NumFac" />
-          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
-          <ScalarProperty Name="PrecioCompra" ColumnName="PrecioCompra" />
-          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
-          <ScalarProperty Name="Precio" ColumnName="Precio" />
-          <ScalarProperty Name="SubTotal" ColumnName="SubTotal" />
-          <ScalarProperty Name="Descuento" ColumnName="Descuento" />
-          <ScalarProperty Name="IVA" ColumnName="IVA" />
-          <ScalarProperty Name="Total" ColumnName="Total" />
           <ScalarProperty Name="FechaRegistro" ColumnName="FechaRegistro" />
-          <ScalarProperty Name="IdProducto" ColumnName="IdProducto" />
-          <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
-          <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
-          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="TotalVenta" ColumnName="TotalVenta" />
+          <ScalarProperty Name="Detalle" ColumnName="Detalle" />
+          <ScalarProperty Name="NumFac" ColumnName="NumFac" />
           <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="IdFormaPago" ColumnName="IdFormaPago" />
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

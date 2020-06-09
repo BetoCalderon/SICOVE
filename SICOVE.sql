@@ -69,7 +69,7 @@ go
 create table tb_Productos(
 	IdProducto int identity(1,1) primary key not null,
 	Nombre varchar(50) not null,
-	Detalle varchar(50),
+	Detalle varchar(100),
 	FechaRegistro date not null,
 	IdCategoria int references tb_Categorias
 );
@@ -81,7 +81,7 @@ create table tb_Compras(
 	IdEmpleado int references tb_Empleados,
 	NumFac int not null,	
 	DetalleCompra varchar(100),
-	TotalCompra decimal(18,5) not null
+	TotalCompra decimal(18,5) not null,
 	FechaRegistro date not null
 );
 go
@@ -176,3 +176,6 @@ go
 --Insertando productos  
 insert into tb_Productos(Nombre, Detalle, FechaRegistro, IdCategoria) 
 	values ('Camisas', 'cual quier cosa', getdate(), 1);
+
+--Notas----------------------
+-- tener un frm para el reg de c/u de las cat por separado y asi controlar mejor el registro de c/u  de los prod

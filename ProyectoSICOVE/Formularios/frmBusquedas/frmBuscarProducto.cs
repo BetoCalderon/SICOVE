@@ -45,6 +45,7 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
                                  {
                                      Codigo = tb_productos.IdProducto,
                                      Nombre = tb_productos.Nombre,
+                                     IdCategoria = tb_Categorias,
                                      Categoria = tb_Categorias.Nombre
                                  };
 
@@ -61,10 +62,12 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
         {
             string id = dgvBuscarProd.CurrentRow.Cells[0].Value.ToString();
             string Nombre = dgvBuscarProd.CurrentRow.Cells[1].Value.ToString();
-            string Categoria = dgvBuscarProd.CurrentRow.Cells[2].Value.ToString();
+            string IdCategoria = dgvBuscarProd.CurrentRow.Cells[2].Value.ToString();
+            string Categoria = dgvBuscarProd.CurrentRow.Cells[3].Value.ToString();
 
             frmMenu.compras.txtCodProducto.Text = id;
             frmMenu.compras.txtNombreProducto.Text = Nombre;
+            frmMenu.compras.txtIdCategoria.Text = IdCategoria;
             frmMenu.compras.txtCategoriaProd.Text = Categoria;
 
             frmMenu.compras.txtPrecio.Select();
@@ -74,7 +77,7 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
         {
 
             envio();
-            //frmMenu.compras.txtPrecio.Focus();
+            frmMenu.compras.txtPrecio.Focus();
             this.Hide();
         }
 
@@ -83,9 +86,15 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
             if (e.KeyCode == Keys.Enter)
             {
                 envio();
-                //frmMenu.compras.txtPrecio.Focus();
+                frmMenu.compras.txtPrecio.Focus();
                 this.Hide();
             }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmProductos productos = new frmProductos();
+            productos.ShowDialog();
         }
     }
 }

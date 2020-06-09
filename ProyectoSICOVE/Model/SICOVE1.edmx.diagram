@@ -4,10 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d5908104e73943b7bc62b4e9f5b8dd92" Name="Diagram1">
+      <Diagram DiagramId="d5908104e73943b7bc62b4e9f5b8dd92" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="SICOVE1Model.tb_Categorias" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
         <EntityTypeShape EntityType="SICOVE1Model.tb_Clientes" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SICOVE1Model.tb_Compras" Width="1.5" PointX="5.25" PointY="10.375" IsExpanded="true" />
         <EntityTypeShape EntityType="SICOVE1Model.tb_Empleados" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SICOVE1Model.tb_FormaPago" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
         <EntityTypeShape EntityType="SICOVE1Model.tb_Inventarios" Width="1.5" PointX="8.25" PointY="11.625" IsExpanded="true" />
@@ -15,22 +14,26 @@
         <EntityTypeShape EntityType="SICOVE1Model.tb_Proveedores" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SICOVE1Model.tb_Roles" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
         <EntityTypeShape EntityType="SICOVE1Model.tb_Usuarios" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SICOVE1Model.tb_Ventas" Width="1.5" PointX="8.25" PointY="5.375" IsExpanded="true" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdCat__3B75D760" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Invent__IdCat__37A5467C" ManuallyRouted="false" />
         <AssociationConnector Association="SICOVE1Model.FK__tb_Produc__IdCat__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdCat__4222D4EF" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdCli__440B1D61" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdEmp__3E52440B" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdFor__3D5E1FD2" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdPro__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdPro__3C69FB99" ManuallyRouted="false" />
         <AssociationConnector Association="SICOVE1Model.FK__tb_Usuari__IdEmp__2D27B809" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdEmp__44FF419A" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdFor__4316F928" ManuallyRouted="false" />
         <AssociationConnector Association="SICOVE1Model.FK__tb_Invent__IdPro__36B12243" ManuallyRouted="false" />
-        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdPro__412EB0B6" ManuallyRouted="false" />
         <AssociationConnector Association="SICOVE1Model.FK__tb_Usuari__IdRol__2C3393D0" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SICOVE1Model.tb_Compras" Width="1.5" PointX="5.25" PointY="13.75" />
+        <EntityTypeShape EntityType="SICOVE1Model.tb_DetalleCompras" Width="1.5" PointX="7.5" PointY="14.25" />
+        <EntityTypeShape EntityType="SICOVE1Model.tb_DetalleVentas" Width="1.5" PointX="10.5" PointY="10.75" />
+        <EntityTypeShape EntityType="SICOVE1Model.tb_Ventas" Width="1.5" PointX="8.25" PointY="6.75" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Detall__IdCat__66603565" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Detall__IdCat__6FE99F9F" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdCli__6A30C649" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdEmp__619B8048" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdFor__60A75C0F" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Compra__IdPro__5FB337D6" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Detall__IdCom__6477ECF3" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Detall__IdPro__656C112C" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Detall__IdPro__6EF57B66" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Detall__IdVen__6E01572D" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdEmp__6B24EA82" />
+        <AssociationConnector Association="SICOVE1Model.FK__tb_Ventas__IdFor__693CA210" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

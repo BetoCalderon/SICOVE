@@ -22,11 +22,11 @@ namespace ProyectoSICOVE.Formularios
         tb_Inventarios inventarios = new tb_Inventarios();
         private void frmCompras_Load(object sender, EventArgs e)
         {
-            CargarComboFPago();
+            CargarCombos();
             txtNunFac.Focus();
         }
 
-        void CargarComboFPago()
+        void CargarCombos()
         {
             using (SICOVE1Entities db = new SICOVE1Entities())
             {
@@ -77,7 +77,7 @@ namespace ProyectoSICOVE.Formularios
             txtNombreProducto.Clear();
             txtCategoriaProd.Clear();
             txtPrecio.Clear();
-            txtCantidad.Text="1";
+            txtCantidad.Text = "1";
             txtSubTotal.Clear();
             txtIVA.Clear();
             txtTotal.Clear();
@@ -137,8 +137,8 @@ namespace ProyectoSICOVE.Formularios
             {
                 MessageBox.Show("Algo salio mal ... " + ex.ToString());
             }
-            dgvCompras.Rows.Add(txtCodProducto.Text, txtNombreProducto.Text, txtCategoriaProd.Text, 
-                txtPrecio.Text, txtCantidad.Text, txtSubTotal.Text, txtIVA.Text,  txtTotal.Text);
+            dgvCompras.Rows.Add(txtCodProducto.Text, txtIdCategoria.Text, txtNombreProducto.Text, txtCategoriaProd.Text,
+                txtPrecio.Text, txtCantidad.Text, txtSubTotal.Text, txtIVA.Text, txtTotal.Text);
 
             //Calcula el valor total de la compra
             calcularTotalFinal();
@@ -273,32 +273,79 @@ namespace ProyectoSICOVE.Formularios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            using(SICOVE1Entities db = new SICOVE1Entities())
+            try
             {
-                compras.NumFac = Convert.ToInt32(txtNunFac.Text);
-                compras.DetalleCompra = txtPrecio.Text;
-                compras.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
+                using (SICOVE1Entities db = new SICOVE1Entities())
+                {
+                    // se hacer el insert de la compra en la tabla de compras 
+                    String comboProveedor = cmbProveedor.SelectedValue.ToString();
+                    compras.IdProveedor = Convert.ToInt32(comboProveedor);
 
-                String comboFPago = cmbFormaPago.SelectedValue.ToString();
-                compras.IdFormaPago = Convert.ToInt32(comboFPago);
+                    String comboFPago = cmbFormaPago.SelectedValue.ToString();
+                    compras.IdFormaPago = Convert.ToInt32(comboFPago);
 
-                String comboProveedor = cmbProveedor.SelectedValue.ToString();
-                compras.IdProveedor = Convert.ToInt32(comboProveedor);
+                    compras.IdEmpleado = 1;
+                    compras.NumFac = Convert.ToInt32(txtNunFac.Text);
+                    compras.DetalleCompra = txtDetalleCompra.Text;
+                    compras.TotalCompra = Convert.ToDecimal(txtTotalFinal.Text);
+                    compras.FechaRegistro = Convert.ToDateTime(dtpFechaReg.Text);
 
 
-                db.tb_Compras.Add(compras);
-                db.SaveChanges();
+                    db.tb_Compras.Add(compras);
+                    db.SaveChanges();
 
 
-                //se debe de generar como un detalle de la compra
-                //cada elemento es un detalle por que son varios de cada uno 
+                    ///////////////////////////////////////////////////////////////////////////////// Lilian Bonilla.
+                    //se hace el insert para la tabla detalle de la compra 
 
-                //compras.PrecioCompra = Convert.ToDecimal(txtPrecio.Text);
-                //compras.Cantidad = Convert.ToInt32(txtCantidad.Text);
-                //compras.SubTotal = Convert.ToDecimal(txtSubTotal.Text);
-                //compras.IVA = Convert.ToDecimal(txtIVA.Text);
-                //compras.TotalCompra = Convert.ToDecimal(txtTotalFinal.Text);
+                    tb_DetalleCompras detalleCompra = new tb_DetalleCompras();
+                    for (int i = 0; i < dgvCompras.RowCount; i++)
+                    {
+                        String idProducto = dgvCompras.Rows[i].Cells[0].Value.ToString();
+                        int IdProductoConvertidos = Convert.ToInt32(idProducto);
 
+                        String idCategoria = dgvCompras.Rows[i].Cells[1].Value.ToString();
+                        int IdCategoriaConvertida = Convert.ToInt32(idCategoria);
+
+                        String precio = dgvCompras.Rows[i].Cells[4].Value.ToString();
+                        decimal precioConvertidos = Convert.ToDecimal(precio);
+
+                        String cantidad = dgvCompras.Rows[i].Cells[5].Value.ToString();
+                        int cantidadConvertidos = Convert.ToInt32(cantidad);
+
+                        String SubTotal = dgvCompras.Rows[i].Cells[6].Value.ToString();
+                        decimal SubTotalConvertidos = Convert.ToDecimal(SubTotal);
+
+                        String IVA = dgvCompras.Rows[i].Cells[7].Value.ToString();
+                        decimal IVAConvertidos = Convert.ToDecimal(IVA);
+
+                        String total = dgvCompras.Rows[i].Cells[8].Value.ToString();
+                        decimal totalConvertidos = Convert.ToDecimal(total);
+
+
+                        detalleCompra.IdCompra = Convert.ToInt32(txtNunFac.Text);
+
+                        detalleCompra.IdProducto = IdProductoConvertidos;
+                        detalleCompra.IdCategoria = IdCategoriaConvertida;
+                        detalleCompra.PrecioCompra = precioConvertidos;
+                        detalleCompra.Cantidad = cantidadConvertidos;
+                        detalleCompra.SubTotal = SubTotalConvertidos;
+                        detalleCompra.IVA = IVAConvertidos;
+                        detalleCompra.Total = totalConvertidos;
+
+                        db.tb_DetalleCompras.Add(detalleCompra);
+                        db.SaveChanges();
+                    }
+                    MessageBox.Show("La venta se registro con exito");
+                    dgvCompras.Rows.Clear();
+                    limpiarVenta();
+                    Limpiar();
+                    CargarCombos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Algo salio mal... " + ex.ToString());
             }
         }
     }

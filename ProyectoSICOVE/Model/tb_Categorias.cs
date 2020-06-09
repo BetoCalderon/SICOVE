@@ -17,10 +17,9 @@ namespace ProyectoSICOVE.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_Categorias()
         {
-            this.tb_Compras = new HashSet<tb_Compras>();
-            this.tb_Inventarios = new HashSet<tb_Inventarios>();
             this.tb_Productos = new HashSet<tb_Productos>();
-            this.tb_Ventas = new HashSet<tb_Ventas>();
+            this.tb_DetalleCompras = new HashSet<tb_DetalleCompras>();
+            this.tb_DetalleVentas = new HashSet<tb_DetalleVentas>();
         }
     
         public int IdCategoria { get; set; }
@@ -28,12 +27,10 @@ namespace ProyectoSICOVE.Model
         public System.DateTime FechaRegistro { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Compras> tb_Compras { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Inventarios> tb_Inventarios { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Productos> tb_Productos { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Ventas> tb_Ventas { get; set; }
+        public virtual ICollection<tb_DetalleCompras> tb_DetalleCompras { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_DetalleVentas> tb_DetalleVentas { get; set; }
     }
 }

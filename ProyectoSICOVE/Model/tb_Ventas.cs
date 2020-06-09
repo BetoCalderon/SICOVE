@@ -14,27 +14,25 @@ namespace ProyectoSICOVE.Model
     
     public partial class tb_Ventas
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public tb_Ventas()
+        {
+            this.tb_DetalleVentas = new HashSet<tb_DetalleVentas>();
+        }
+    
         public int IdVenta { get; set; }
-        public int NumFac { get; set; }
-        public string Detalle { get; set; }
-        public Nullable<decimal> PrecioCompra { get; set; }
-        public int Cantidad { get; set; }
-        public decimal Precio { get; set; }
-        public decimal SubTotal { get; set; }
-        public Nullable<decimal> Descuento { get; set; }
-        public Nullable<decimal> IVA { get; set; }
-        public decimal Total { get; set; }
-        public System.DateTime FechaRegistro { get; set; }
-        public Nullable<int> IdProducto { get; set; }
-        public Nullable<int> IdCategoria { get; set; }
         public Nullable<int> IdFormaPago { get; set; }
         public Nullable<int> IdCliente { get; set; }
         public Nullable<int> IdEmpleado { get; set; }
+        public int NumFac { get; set; }
+        public string Detalle { get; set; }
+        public decimal TotalVenta { get; set; }
+        public System.DateTime FechaRegistro { get; set; }
     
-        public virtual tb_Categorias tb_Categorias { get; set; }
         public virtual tb_Clientes tb_Clientes { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_DetalleVentas> tb_DetalleVentas { get; set; }
         public virtual tb_Empleados tb_Empleados { get; set; }
         public virtual tb_FormaPago tb_FormaPago { get; set; }
-        public virtual tb_Productos tb_Productos { get; set; }
     }
 }

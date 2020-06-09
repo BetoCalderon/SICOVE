@@ -27,7 +27,6 @@ namespace ProyectoSICOVE.Model
     
         public virtual DbSet<tb_Categorias> tb_Categorias { get; set; }
         public virtual DbSet<tb_Clientes> tb_Clientes { get; set; }
-        public virtual DbSet<tb_Compras> tb_Compras { get; set; }
         public virtual DbSet<tb_Empleados> tb_Empleados { get; set; }
         public virtual DbSet<tb_FormaPago> tb_FormaPago { get; set; }
         public virtual DbSet<tb_Inventarios> tb_Inventarios { get; set; }
@@ -35,6 +34,9 @@ namespace ProyectoSICOVE.Model
         public virtual DbSet<tb_Proveedores> tb_Proveedores { get; set; }
         public virtual DbSet<tb_Roles> tb_Roles { get; set; }
         public virtual DbSet<tb_Usuarios> tb_Usuarios { get; set; }
+        public virtual DbSet<tb_Compras> tb_Compras { get; set; }
+        public virtual DbSet<tb_DetalleCompras> tb_DetalleCompras { get; set; }
+        public virtual DbSet<tb_DetalleVentas> tb_DetalleVentas { get; set; }
         public virtual DbSet<tb_Ventas> tb_Ventas { get; set; }
     }
 }
