@@ -34,8 +34,8 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
             {
                 string nombre = txtBuscarProducto.Text;
 
-                var buscarprod = from tb_Categorias in db.tb_Categorias
-                                 from tb_productos in db.tb_Productos
+                var buscarprod = from tb_productos in db.tb_Productos
+                                 from tb_Categorias in db.tb_Categorias
                                  where tb_productos.IdProducto == tb_Categorias.IdCategoria 
                                  where tb_productos.Nombre.Contains(nombre)
                                  //where tb_Categorias.Nombre.Contains(nombre)
@@ -45,7 +45,7 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
                                  {
                                      Codigo = tb_productos.IdProducto,
                                      Nombre = tb_productos.Nombre,
-                                     IdCategoria = tb_Categorias,
+                                     IdCategoria = tb_Categorias.IdCategoria,
                                      Categoria = tb_Categorias.Nombre
                                  };
 
@@ -60,12 +60,12 @@ namespace ProyectoSICOVE.Formularios.frmBusquedas
 
         void envio()
         {
-            string id = dgvBuscarProd.CurrentRow.Cells[0].Value.ToString();
+            string idProducto = dgvBuscarProd.CurrentRow.Cells[0].Value.ToString();
             string Nombre = dgvBuscarProd.CurrentRow.Cells[1].Value.ToString();
             string IdCategoria = dgvBuscarProd.CurrentRow.Cells[2].Value.ToString();
             string Categoria = dgvBuscarProd.CurrentRow.Cells[3].Value.ToString();
 
-            frmMenu.compras.txtCodProducto.Text = id;
+            frmMenu.compras.txtCodProducto.Text = idProducto;
             frmMenu.compras.txtNombreProducto.Text = Nombre;
             frmMenu.compras.txtIdCategoria.Text = IdCategoria;
             frmMenu.compras.txtCategoriaProd.Text = Categoria;

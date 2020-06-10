@@ -162,7 +162,7 @@ namespace ProyectoSICOVE.Formularios
             Double suma = 0;
             for (int i = 0; i < dgvCompras.RowCount; i++)
             {
-                String datosOperar = dgvCompras.Rows[i].Cells[7].Value.ToString();
+                String datosOperar = dgvCompras.Rows[i].Cells[8].Value.ToString();
                 Double datosConvertidos = Convert.ToDouble(datosOperar);
 
                 suma += datosConvertidos;
@@ -228,20 +228,6 @@ namespace ProyectoSICOVE.Formularios
 
                     producto = db.tb_Productos.Where(idBuscar => idBuscar.IdProducto == buscar).First();
                     categorias = db.tb_Categorias.Where(idBuscar => idBuscar.IdCategoria == buscar).First();
-
-
-                    //string nombre = txtBuscarProducto.Text;
-
-                    //var buscarprod = from tb_Categorias in db.tb_Categorias
-                    //                 from tb_productos in db.tb_Productos
-                    //                 where tb_productos.IdProducto == tb_Categorias.IdCategoria
-
-                    //select new
-                    //{
-                    //    //Codigo = tb_productos.IdProducto,
-                    //    //Nombre = tb_productos.Nombre,
-                    //    //Categoria = tb_Categorias.Nombre
-                    //};
 
                     txtCodProducto.Text = Convert.ToString(producto.IdProducto);
                     txtNombreProducto.Text = Convert.ToString(producto.Nombre);
